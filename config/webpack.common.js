@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './public/index.html',
@@ -45,7 +46,8 @@ module.exports = (envOpts) => {
       ]
     },
     plugins: [
-      HtmlWebpackPluginConfig
+      HtmlWebpackPluginConfig,
+      new DashboardPlugin()
     ]
   };
 
